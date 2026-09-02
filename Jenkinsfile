@@ -7,10 +7,17 @@ pipeline {
         stage('Show Workspace') {
 
             steps {
+
                 powershell '''
-                pwd
+                Write-Host "Current Folder:"
+                Get-Location
+
+                Write-Host ""
+                Write-Host "Files:"
+
                 Get-ChildItem
                 '''
+
             }
 
         }
@@ -18,28 +25,31 @@ pipeline {
         stage('Run Script') {
 
             steps {
+
                 powershell '''
                 .\\Check-Printers.ps1
                 '''
+
             }
 
         }
-        
-    stage('Show Report') {
 
-    steps {
+        stage('Show Report') {
 
-        powershell '''
+            steps {
 
-        Write-Host "Report Exists?"
+                powershell '''
 
-        Get-ChildItem *.csv
+                Write-Host "Report Exists?"
 
-        '''
+                Get-ChildItem *.csv
 
-    }
+                '''
 
-}
+            }
+
+        }
+
     }
 
     post {
