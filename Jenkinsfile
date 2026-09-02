@@ -4,11 +4,12 @@ pipeline {
 
     stages {
 
-        stage('List Files') {
+        stage('Show Workspace') {
 
             steps {
 
                 powershell '''
+                pwd
                 Get-ChildItem
                 '''
 
@@ -16,7 +17,7 @@ pipeline {
 
         }
 
-        stage('Run Printer Script') {
+        stage('Run Script') {
 
             steps {
 
