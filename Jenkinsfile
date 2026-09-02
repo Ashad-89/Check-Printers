@@ -24,7 +24,22 @@ pipeline {
             }
 
         }
+        
+    stage('Show Report') {
 
+    steps {
+
+        powershell '''
+
+        Write-Host "Report Exists?"
+
+        Get-ChildItem *.csv
+
+        '''
+
+    }
+
+}
     }
 
     post {
