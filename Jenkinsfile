@@ -26,7 +26,11 @@ pipeline {
                 '''
 
             }
+            
+    post {
 
+        success {
+            archiveArtifacts artifacts: 'PrinterStatus.csv'
         }
 
     }
