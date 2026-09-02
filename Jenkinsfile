@@ -7,12 +7,10 @@ pipeline {
         stage('Show Workspace') {
 
             steps {
-
                 powershell '''
                 pwd
                 Get-ChildItem
                 '''
-
             }
 
         }
@@ -20,17 +18,24 @@ pipeline {
         stage('Run Script') {
 
             steps {
-
                 powershell '''
                 .\\Check-Printers.ps1
                 '''
-
             }
-            
+
+        }
+
+    }
+
     post {
 
         success {
-            archiveArtifacts artifacts: 'PrinterStatus.csv'
+
+            archiveArtifacts(
+                artifacts: 'PrinterStatus.csv',
+                fingerprint: true
+            )
+
         }
 
     }
