@@ -21,4 +21,3 @@ Export-Csv ".\PrinterStatus.csv" `
 -NoTypeInformation
 
 $Results
-``
