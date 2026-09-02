@@ -1,0 +1,4 @@
+"PrinterName","IPAddress","Location","Online","DateChecked"
+"HP-DeskJet","192.168.0.34","Office","False","02/09/2026 14:56:07"
+"Canon-Home","192.168.0.35","Living Room","False","02/09/2026 14:56:14"
+"Brother-Laser","192.168.0.36","Bedroom","True","02/09/2026 14:56:15"

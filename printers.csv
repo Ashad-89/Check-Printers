@@ -1,0 +1,4 @@
+PrinterName,IPAddress,Location
+HP-DeskJet,192.168.0.34,Office
+Canon-Home,192.168.0.35,Living Room
+Brother-Laser,192.168.0.36,Bedroom
