@@ -49,6 +49,23 @@ pipeline {
             }
 
         }
+        stage('Show Report Contents') {
+
+    steps {
+
+        powershell '''
+
+        Write-Host ""
+        Write-Host "=== PrinterStatus.csv ==="
+        Write-Host ""
+
+        Get-Content .\\PrinterStatus.csv
+
+        '''
+
+    }
+
+}
 
     }
 
