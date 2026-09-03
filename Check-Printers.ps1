@@ -16,8 +16,16 @@ $Results = foreach ($Printer in $Printers)
     }
 }
 
-$Results |
-Export-Csv ".\PrinterStatus.csv" `
--NoTypeInformation
+$ReportFolder = "C:\PrinterMonitor\Reports"
 
-$Results
+if (!(Test-Path $ReportFolder))
+{
+    New-Item -ItemType Directory -Path $ReportFolder
+}
+
+$TimeStamp = Get-Date -Format "yyyy-MM-dd-HHmm"
+
+$Results |
+Export-Csv `
+"$ReportFolder\PrinterStatus-$TimeStamp.csv" `
+-NoTypeInformation
